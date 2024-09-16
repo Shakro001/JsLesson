@@ -1,5 +1,5 @@
 "use strict";
-
+if (confirm('Почати тестування?')){
 
 class ShootGame {
   constructor() {
@@ -38,6 +38,10 @@ let game = new ShootGame();
 game.randomMeshes();
 console.log(game)
 game.shooting();
+
+  
+}
+
 
 
   
