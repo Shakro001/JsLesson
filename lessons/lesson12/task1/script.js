@@ -1,5 +1,5 @@
 "use strict";
-if(confirm('почати?') !== 0){
+
 
 class ShootGame {
   constructor() {
@@ -41,4 +41,4 @@ game.shooting();
 
 
   
-}
+
