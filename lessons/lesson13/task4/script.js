@@ -62,5 +62,4 @@ class TBankomat {
 }
 
 let obj = new TBankomat();
-console.log(obj);
 console.log(obj.cashingOut(235));
