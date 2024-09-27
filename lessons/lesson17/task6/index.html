@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task7</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>
+Задача 7. Подорож складається з 3 етапів. 
+На кожному етапі користувач може вибрати один з видів транспорту (авто, автобус, літак - випадаючий список), 
+харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х гідів(використати  - radio buttons). 
+Ціни визначте самі. Підрахувати загальну вартість.
+
+</h1>
+
+
+  <select id="auto">
+    <option value="100">car</option>
+    <option value="200">autobus</option>
+    <option value="300">airplane</option>
+  </select>
+<br>
+  <label for="">сніданок</label>
+  <input type="checkbox" class="breakfast" value="100">
+  <label for="">обід</label>
+  <input type="checkbox" class="dinner" value="100">
+  <label for="">вечеря</label>
+  <input type="checkbox" class="supper" value="100">
+
+<br>
+
+  <label for="">Jhon</label>
+  <input type="radio" class="jhon" value="500" name="gid">
+
+  <label for="">Quattro</label>
+  <input type="radio" class="quattro" value="200" name="gid">
+
+  <label for="">Petro</label>
+  <input type="radio" class="petro" value="400" name="gid">
+
+  <button class="sum">SUM</button>
+
+  <div class="res"></div>
+
+  </body>
+</html>
