@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="list"></div>
+    <div class="list"></div>
+    <div class="list"></div>
+    <div class="list"></div>
+    <div class="list"></div>
+
+
+    <button id="button">button</button>
+
+    <script>
+
+
+function getRandomList(){
+    const list = document.querySelectorAll('.list')
+
+
+    for(let listEl of list){
+
+        let randomList = []
+        for(let i = 0; i<Math.floor(Math.random()*5+1); i++){
+            randomList.push(Math.floor(Math.random()*100+1))
+        }
+        listEl.innerText = randomList
+
+    }
+}
+
+
+
+function getEvenNumInList(){
+    const button = document.querySelector('#button')
+    button.onclick = () =>{
+        const allList = document.querySelectorAll('.list')
+        
+        for(let listEl of allList){
+
+            let listElContent = listEl.innerText.split(',').map(Number)
+            
+            if(listElContent.length % 2 === 0){
+                listEl.style.border = '3px solid green'
+                
+            }else{
+                listEl.style.border = '3px solid red' 
+                console.log([1,2,3].length) 
+            }
+
+            
+            
+        }
+    }
+}
+getRandomList()
+getEvenNumInList()
+
+    </script>
+</body>
+</html>

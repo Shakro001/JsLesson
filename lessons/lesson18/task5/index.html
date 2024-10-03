@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+</head>
+
+<style>
+    .item{
+        border: 1px solid black;
+        width: 200px;
+        height: 400px;
+        display: inline-block;
+    }
+    .item.active{
+        border: 3px solid green
+    }
+</style>
+<body>
+
+    <h1>Задача 5. Відображаємо картки товарів, які користувач може вибирати. Вибраний товар має зелену рамку (при кліку робити toogle з класом вибраного елемента)</h1>
+
+
+    <div class="items">
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+    
+
+    <script>
+
+
+        const item = document.querySelectorAll('.item')
+        for(let itemEl of item){
+            itemEl.addEventListener('click', ()=>{
+            itemEl.classList.toggle('active')
+        })
+        }
+        
+
+    </script>
+</body>
+</html>

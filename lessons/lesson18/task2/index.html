@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task2</title>
+    <script src="script.js"></script>
+    <style>
+      table,tr,td{
+        border: 1px solid black;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>
+Задача 4. Дано 3 таблиці розмірності 3*3 з випадковими числами. 
+Якщо відбувається клік на якійсь із клітинок, то до відповідної таблиці додається червона рамка (спробуйте додати можливість відображення кількості кліків біля назви таблиці з використанням відповідно доданого для цього атрибута).
+
+</h1>
+
+<table class="table">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+
+<table class="table">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+<table class="table">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table> 
+
+
+
+<script>
+function getRandomNumTable() {
+    const table = document.querySelectorAll('td');
+    for (let tdEl of table) {
+        tdEl.innerText = Math.floor(Math.random() * 100 + 1);
+    }
+}
+getRandomNumTable();
+
+function getBorderTable(e){
+
+
+  window.addEventListener('click', (event)=>{
+    const tableEl = event.target.closest('table')
+    if(tableEl){
+      tableEl.style.border = '4px solid black'
+    }
+  })
+
+}
+
+getBorderTable()
+
+
+</script>
+  </body>
+</html>

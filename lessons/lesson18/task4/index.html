@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <style>
+        img{
+            position: relative;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+    <img width="65px" src="snowflake.jpg" alt="" class="snowflake">
+
+
+    <script>
+
+
+            let img = document.querySelector('img')
+            const maxTop = 400;
+        
+            let intervalId = setInterval(()=>{
+                let imgPos = img.getBoundingClientRect();
+                let newTop = parseFloat(imgPos.top) + Math.random() * 100 + 1;
+                
+                img.style.top = `${newTop}px`
+                
+
+
+                if(newTop > maxTop){
+                clearInterval(intervalId)
+            }
+                
+            },1000)
+
+            
+                
+        
+
+    </script>
+</body>
+</html>
