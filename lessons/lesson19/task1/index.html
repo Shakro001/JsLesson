@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: #000;
+    }
+
+    .star {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    @keyframes starAnim {
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .anim{
+        animation: starAnim 1.5s
+    }
+  </style>
+  <body>
+    
+
+    <script>
+      function randomStar() {
+
+
+        const mainEl = document.documentElement;
+        const mainElWidth = mainEl.clientWidth;
+        const mainElHeight = mainEl.clientHeight;
+        
+          const randomWidth = Math.floor(Math.random() * mainElWidth)-50;
+          const randomHeight = Math.floor(Math.random() * mainElHeight)-50;
+
+          const createStarEl = document.createElement('img')
+        createStarEl.src = 'star.png'
+        createStarEl.width = 15;
+        createStarEl.classList.add('star','anim')
+        createStarEl.style.left = `${randomWidth}px`; 
+        createStarEl.style.top = `${randomHeight}px`
+
+
+
+        document.body.appendChild(createStarEl)
+
+
+        setTimeout(()=>{
+            createStarEl.remove()
+        },1500)
+
+
+
+      }
+
+      function pasteStar(){
+        setInterval(randomStar, Math.floor(Math.random()*0));
+
+      }
+
+      pasteStar()
+
+
+
+
+    </script>
+  </body>
+</html>
