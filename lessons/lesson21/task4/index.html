@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W</title>
+</head>
+<body>
+    <div class="result">
+        <p>Лондон: <span id="time-london"></span></p>
+        <p>Париж: <span id="time-paris"></span></p>
+        <p>Сидней: <span id="time-sydney"></span></p>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeLondon = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
+            const timeParis = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Paris" }));
+            const timeSydney = new Date(now.toLocaleString("en-US", { timeZone: "Australia/Sydney" }));
+            document.getElementById("time-london").innerText = timeLondon.toLocaleTimeString();
+            document.getElementById("time-paris").innerText = timeParis.toLocaleTimeString();
+            document.getElementById("time-sydney").innerText = timeSydney.toLocaleTimeString();
+        }
+
+        updateTime();
+        setInterval(updateTime,0);
+    </script>
+</body>
+</html>

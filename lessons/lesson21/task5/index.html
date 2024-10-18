@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Задача 1. Створити клас Client
+Властивості
+ID
+ПІБ
+Кількість грошей на рахунку
+Методи
+Додавання грошей
+Зняття грошей
+ToString
+
+На основі цього класу створити клас GoldenClient
+Властивості
+ID
+ПІБ
+Кількість грошей на рахунку
+Ліміт кредитних коштів
+Відсоток за використання кредитних коштів
+Методи
+Додавання грошей
+Зняття грошей
+Визначення пені за використання кредитних коштів
+ToString
+
+</h1>
+
+    <script>
+
+class Client {
+  constructor(id, fullName, money) {
+    this.id = id;
+    this.fullName = fullName;
+    this.money = money;
+  }
+
+  addMoney(moneyAdd) {
+    return this.money += moneyAdd;
+  }
+
+  knowledgeMoney(moneyTake) {
+    if (this.money >= moneyTake) {
+      return this.money -= moneyTake;
+    }
+  }
+
+  toString() {
+    return `id: ${this.id}; fullName: ${this.fullName}; money: ${this.money}`;
+  }
+}
+
+class GoldenClient extends Client {
+  constructor(id, fullName, money, limit, procent) {
+    super(id, fullName, money);
+    this.limit = limit;
+    this.procent = procent;
+  }
+
+  calculateCreditUsage() {
+    return this.limit * this.procent;
+  }
+
+  toString() {
+    return `id: ${this.id}; fullName: ${this.fullName}; money: ${this.money}; limit: ${this.limit}; procent: ${this.procent} creditUsage: ${this.calculateCreditUsage()}`;
+  }
+}
+
+
+const obj = new GoldenClient(232345, 'Ivan', 1000, 200, 20);
+console.log(obj.toString()); 
+
+
+
+    </script>
+</body>
+</html>

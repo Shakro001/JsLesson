@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Задача 3. Визначити скільки залишилось до кінця робочого дня (до 17.00)
+    </h1>
+
+    <div class="result"></div>
+
+    <script>
+      function endWorkTime() {
+        const nowTime = new Date();
+        const endWorkTime = new Date().setHours(17, 0, 0, 0);
+
+        const getHoursendWorkTime = Math.floor(
+          (endWorkTime - nowTime) / (1000 * 60 * 60)
+        );
+        const getMinutesendWorkTime = Math.floor(
+          ((endWorkTime - nowTime) % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        document.querySelector(
+          ".result"
+        ).innerText = ` ${getHoursendWorkTime} годин та ${getMinutesendWorkTime} хвилин`;
+      }
+endWorkTime()
+      setInterval(endWorkTime, 60000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Задача 1. Виводити на екран скільки хвилин користувач вже на сайті
+</h1>
+
+
+    <div class="result"></div>
+
+    <script>
+        function timeInWebSite(){
+            let start = new Date().getTime()
+            const result = document.querySelector('.result')
+            return ()=>{
+                let end = new Date().getTime()
+                result.innerText =  `Minutes: ${Math.floor(((end - start) / 1000) / 60)}  second: ${Math.floor(((end - start) / 1000) % 60)}`
+            }
+        }
+        let timeFunc = timeInWebSite()
+        setInterval(()=>{
+            timeFunc()
+        },1000)
+
+        
+        
+    </script>
+</body>
+</html>
