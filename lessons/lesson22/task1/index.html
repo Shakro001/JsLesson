@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio Buttons Example</title>
+    <style></style>
+  </head>
+
+  <body>
+    <h1>
+      Задача 18. Користувач може змінювати колір фону, що вибирає користувач з
+      використанням Зберігати цей колір і відновлювати при наступному відкритті.
+      Також зберігати і відображати кількість змін протягом одного сеансу.
+    </h1>
+
+    <label>backgrpond</label>
+    <input id="input" type="color" name="options"/>
+
+    <script>
+      class saveBgColor{
+        constructor(){
+
+            this.input = document.querySelector('#input')
+            this.loadBgColor()
+
+            this.input.addEventListener('input', ()=>this.saveBgColor())
+            
+        }
+
+        loadBgColor(){
+            if(localStorage.getItem('bgc')){
+                this.saveColor = localStorage.getItem('bgc')
+                document.body.style.backgroundColor = this.saveColor
+                this.input.value = this.saveColor
+            }else{
+                this.saveBgColor()
+            }
+        }
+
+
+
+        saveBgColor(){
+            this.inputValue = this.input.value
+            document.body.style.backgroundColor = this.inputValue
+            localStorage.setItem('bgc', this.inputValue)
+        }
+
+        
+
+
+
+      }
+
+      new saveBgColor()
+    </script>
+  </body>
+</html>
